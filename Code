@@ -1,0 +1,47 @@
+-- The first step in the SQL is to create a Database. 
+-- So the syntax to create a Database is 
+Create Database database_name;
+-- Querrry:
+Create Database Admin;
+
+-- This a Query to create a table. But to store that table inn the Admin Database we have to write a querry
+USE Admin;
+-- This is a Query to create table. the Table name is Stores. 
+CREATE TABLE Stores (
+	store_id int ,
+	store_name VARCHAR (255),
+	phone int ,
+	email VARCHAR (255),
+	street VARCHAR (255),
+	city VARCHAR (255),
+	state VARCHAR (10),
+	zip_code VARCHAR (6)
+);
+
+Select * from Stores ;
+alter table Stores 
+DROP column zip_code ;
+
+-- The Next step is to insert the values in to the table .
+-- So to insert the Values we will use "Insert" Command.
+
+Insert Into Stores Values 
+('1', 'Wing11', 'wing11.1@org.in', 'Mumbai')
+('2', 'Wing11', 'wing11.2@org.in', 'Delhi')
+('3', 'wing11', 'wing11.3@org.in', 'Kolkata')
+('4', 'wing11', 'wing11.4@org.in', 'Chennai')
+('5', 'wing11', 'wing11.5@org.in', 'Hydrabad') ;
+
+-- The Next step is to now fetch the data from the Table which we created.
+-- The Command for fetching the data from the table is "Select" and * is used to select all the values in the table. 
+Select City from Stores ;
+
+-- Now in this querry we will use the "WHERE" clause. The WHERE clause is used to filter any data base on a condition.
+Select * from Stores
+Where city = 'Delhi' ;
+
+-- Now we are going to use the "DISTINCT" Operator.
+-- This is a type of operator which fetch the unique record from the duplicate data present in the table.
+Select DISTINCT store_id from Stores;
+-- This command is to delete thhe complete table what we have created.
+Drop table Stores;
